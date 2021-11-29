@@ -28,8 +28,8 @@ parser.add_argument("--PRIMER_MIN_GC", default="20.0")
 parser.add_argument("--PRIMER_MAX_GC", default="80.0")
 parser.add_argument("--GC_CLAMP", default="0")
 parser.add_argument("--POLYX", default="3")
-parser.add_argument("--PRIMER_LEFT_INPUT")
-parser.add_argument("--PRIMER_RIGHT_INPUT")
+parser.add_argument("--PRIMER_LEFT_INPUT", type = str)
+parser.add_argument("--PRIMER_RIGHT_INPUT", type = str)
 parser.add_argument("--PRIMER5_START")
 parser.add_argument("--PRIMER5_END")
 parser.add_argument("--PRIMER3_START")
@@ -54,7 +54,7 @@ if args.PRIMER_LEFT_INPUT is not None:
     url_1 += '&PRIMER_LEFT_INPUT=' + args.PRIMER_LEFT_INPUT
 
 if args.PRIMER_RIGHT_INPUT is not None:
-    url_1 += 'PRIMER_RIGHT_INPUT=' + args.PRIMER_RIGHT_INPUT
+    url_1 += '&PRIMER_RIGHT_INPUT=' + args.PRIMER_RIGHT_INPUT
 
 if args.PRIMER5_START is not None:
     url_1 += '&PRIMER5_START=' + str(args.PRIMER5_START)
